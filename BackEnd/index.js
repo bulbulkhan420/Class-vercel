@@ -6,7 +6,7 @@ const {route}=require('./route.js');
 let http=require('http');
 let PORT=process.env.PORT;
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:"https://class-vercel-frontend.vercel.app",
     methods:["POST","GET"],
     credentials:true
 }));
@@ -22,7 +22,7 @@ let {Server}=require('socket.io');
 const { datamessage } = require('./database.js');
 let io=new Server(server,{
     cors:{
-        origin:"http://localhost:5173",
+        origin:"https://class-vercel-frontend.vercel.app",
         methods:["GET","POST"]
     }
 })
