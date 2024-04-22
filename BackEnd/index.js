@@ -4,7 +4,7 @@ const app=express();
 const cors=require("cors");
 const {route}=require('./route.js');
 let http=require('http');
-let PORT=process.env.PORT;
+let PORT=3002;
 app.use(cors({
     origin:"https://class-vercel-frontend.vercel.app",
     methods:["POST","GET"],
