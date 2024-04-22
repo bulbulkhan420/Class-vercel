@@ -7,7 +7,7 @@ export default function Studentresult() {
     let {id}=useParams();
     let [info,sinfo]=useState({});
     useEffect(()=>{
-      axios.post("http://localhost:3002/studentinfo",{
+      axios.post("https://class-vercel-backend.vercel.app/studentinfo",{
         id:id
       })
       .then((res)=>{
