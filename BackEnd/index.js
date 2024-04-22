@@ -20,12 +20,7 @@ app.get("/",(req,res)=>{
 let server=http.createServer(app);
 let {Server}=require('socket.io');
 const { datamessage } = require('./database.js');
-let io=new Server(server,{
-    cors:{
-        origin:"https://class-vercel-frontend.vercel.app",
-        methods:["GET","POST"]
-    }
-})
+let io=new Server(server);
 let tr=0;
 io.on('connection',(socket)=>{
    
