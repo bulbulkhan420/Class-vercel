@@ -6,7 +6,7 @@ import teci from './teacher.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import io from 'socket.io-client'
-let socket=io.connect("http://localhost:3002");
+let socket=io.connect("https://class-vercel-backend.vercel.app");
 export default function Teachersms() {
     let {id}=useParams();
     let [tin,stin]=useState({});
@@ -39,7 +39,7 @@ export default function Teachersms() {
       
     }
     useEffect(()=>{
-      axios.post("http://localhost:3002/teacherinfo",{
+      axios.post("https://class-vercel-backend.vercel.app/teacherinfo",{
         id
       })
       .then((res)=>{
