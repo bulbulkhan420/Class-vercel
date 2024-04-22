@@ -25,7 +25,7 @@ export default function Loginpage() {
    let submit=(e)=>{
     e.preventDefault();
     if(id=="student"){
-        axios.post("http://localhost:3002/studentlogin",{
+        axios.post("https://class-vercel-backend.vercel.app/studentlogin",{
             id:mid,
             password:pass
         })
@@ -42,7 +42,7 @@ export default function Loginpage() {
         })
     }
     else if(id=="teacher"){
-        axios.post("http://localhost:3002/teacherlogin",{
+        axios.post("https://class-vercel-backend.vercel.app/teacherlogin",{
             id:mid,
             password:pass
         })
@@ -60,7 +60,7 @@ export default function Loginpage() {
     }
     else if(id=="admin")
     {
-        axios.post("http://localhost:3002/adminlogin",{
+        axios.post("https://class-vercel-backend.vercel.app/adminlogin",{
             id:mid,
             password:pass
         })
