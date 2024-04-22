@@ -31,7 +31,7 @@ export default function Studentnotification() {
     })
 
    })
-   })
+   },[]);
    if(up.length>10){
     up.splice(10,up.length);
     sup([...up]);
