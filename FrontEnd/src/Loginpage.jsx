@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import log from "./main.module.css"
 import axios from 'axios';
+import logoru from '../logo.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Loginpage() {
@@ -81,7 +82,7 @@ export default function Loginpage() {
     <div>
         <div className={log.man}>
         <div className={log.login}>
-            <img src="logo.png" className={log.logo} alt="" />
+            <img src={logoru} className={log.logo} alt="" />
         <h4>{value}</h4>
         <input type="text" name="id" onChange={setval} placeholder='Enter Your Id'/>
         <input type="password" name='password' onChange={setval} placeholder='Enter Your Password' />
