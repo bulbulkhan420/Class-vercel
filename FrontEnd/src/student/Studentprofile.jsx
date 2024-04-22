@@ -7,7 +7,7 @@ export default function Studentprofile() {
     let {id}=useParams();
    let [info,sinfo]=useState({});
     useEffect(()=>{
-      axios.post("http://localhost:3002/studentinfo",{
+      axios.post("https://class-vercel-backend.vercel.app/studentinfo",{
         id:id
       })
       .then((res)=>{
@@ -19,7 +19,7 @@ export default function Studentprofile() {
     <div>
     <Studentheader sid={id}/>
     <div className={bb.profile}>
-        <img src={`http://localhost:3002/${info.image}`} alt="" />
+        <img src={`https://class-vercel-backend.vercel.app/${info.image}`} alt="" />
         <h5>Student Information</h5>
         <table>
             <tbody>
