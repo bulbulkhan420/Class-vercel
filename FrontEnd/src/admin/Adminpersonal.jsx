@@ -12,7 +12,7 @@ export default function Adminpersonal() {
     }
     let upd=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3002/adminupdate",{
+        axios.post("https://class-vercel-backend.vercel.app/adminupdate",{
             password
         })
         .then((res)=>{
