@@ -14,7 +14,7 @@ export default function Teachersubmission() {
         e.preventDefault();
         let p=e.target.value;
          syear(e.target.value);
-            axios.post("http://localhost:3002/allsub",{
+            axios.post("https://class-vercel-backend.vercel.app/allsub",{
                 year:p,
                 id
             })
@@ -26,7 +26,7 @@ export default function Teachersubmission() {
        
     }
     let download=(ob)=>{
-        axios.post("http://localhost:3002/downloads",{
+        axios.post("https://class-vercel-backend.vercel.app/downloads",{
             id:ob.filename
         },{
             responseType:'blob'
@@ -36,7 +36,7 @@ export default function Teachersubmission() {
         })
     }
     let del=(ob,i)=>{
-       axios.post("http://localhost:3002/delsub",{
+       axios.post("https://class-vercel-backend.vercel.app/delsub",{
         fname:ob.filename
        })
        .then((res)=>{
