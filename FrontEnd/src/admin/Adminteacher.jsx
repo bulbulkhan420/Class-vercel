@@ -11,7 +11,7 @@ export default function Adminteacher() {
      let [teacher,steacher]=useState("");
      let [idtc,sidtc]=useState("");
     useEffect(()=>{
-        axios.get("http://localhost:3002/allteacher")
+        axios.get("https://class-vercel-backend.vercel.app/allteacher")
         .then((res)=>{
             sallteacher(res.data);
            sntid(res.data[0].id);
@@ -106,7 +106,7 @@ export default function Adminteacher() {
     }
     let add=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3002/addteacheradmin",{
+        axios.post("https://class-vercel-backend.vercel.app/addteacheradmin",{
             id,password,name,home,email,phone
         })
         .then((res)=>{
@@ -128,7 +128,7 @@ export default function Adminteacher() {
         let formdata=new FormData();
         formdata.append('image1',image);
         formdata.append('picid',picid);
-        axios.post("http://localhost:3002/teacherpic",formdata)
+        axios.post("https://class-vercel-backend.vercel.app/teacherpic",formdata)
         .then((res)=>{
             if(res.data.ok){
                 toast('Picture Uploaded Successfully',{
@@ -144,7 +144,7 @@ export default function Adminteacher() {
     }
     let upt=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3002/updateteacher",{
+        axios.post("https://class-vercel-backend.vercel.app/updateteacher",{
             id:ntid,
             password:npassword,
             email:nemail,
@@ -166,7 +166,7 @@ export default function Adminteacher() {
    
     let delte=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3002/teacherdel/"+teacher)
+        axios.post("https://class-vercel-backend.vercel.app/teacherdel/"+teacher)
         .then((res)=>{
             if(res.data.ok){
                 toast('Teacher Information Deleted Successfully',{
@@ -184,7 +184,7 @@ export default function Adminteacher() {
     let tclass=(e)=>{
         e.preventDefault();
         
-        axios.post('http://localhost:3002/teacherclassadd',{
+        axios.post('https://class-vercel-backend.vercel.app/teacherclassadd',{
             id:idtc,
             day,
             am9,
