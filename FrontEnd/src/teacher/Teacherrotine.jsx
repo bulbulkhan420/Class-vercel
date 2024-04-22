@@ -9,7 +9,7 @@ export default function Teacherrotine() {
     let {id}=useParams();
     let [info,sinfo]=useState([]);
     useEffect(()=>{
-        axios.post("http://localhost:3002/teacherclassinfo",{
+        axios.post("https://class-vercel-backend.vercel.app/teacherclassinfo",{
             id
         })
         .then((res)=>{
@@ -49,7 +49,7 @@ export default function Teacherrotine() {
     }
     let update=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3002/studentclassinfo",{
+        axios.post("https://class-vercel-backend.vercel.app/studentclassinfo",{
             year,
             day,
             am9,
