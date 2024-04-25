@@ -7,7 +7,7 @@ export default function Teacherprofile() {
     let {id}=useParams();
     let [info,sinfo]=useState({});
     useEffect(()=>{
-        axios.post("https://class-vercel-backend.vercel.app/teacherinfo",{
+        axios.post("https://renderbackendbbb.onrender.com/teacherinfo",{
             id
         })
         .then((res)=>{
@@ -22,7 +22,7 @@ export default function Teacherprofile() {
       <h3>Your Porfile Information</h3>
         <div className={tec.prot}>
             
-            <img src={"https://class-vercel-backend.vercel.app/"+info.image} alt="" />
+            <img src={"https://renderbackendbbb.onrender.com/"+info.image} alt="" />
             <p>Your Picture</p>
             <div className={tec.dflex}>
                 <div className={tec.bold}>Name: </div>
