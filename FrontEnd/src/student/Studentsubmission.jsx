@@ -15,13 +15,13 @@ export default function Studentsubmission() {
   
   
     useEffect(()=>{
-        axios.get("https://class-vercel-backend.vercel.app/allteacher")
+        axios.get("https://renderbackendbbb.onrender.com/allteacher")
         .then((res)=>{
             sallteacher(res.data);
             stid(res.data[0].id);
            
         })
-      axios.post("https://class-vercel-backend.vercel.app/studentinfo",{
+      axios.post("https://renderbackendbbb.onrender.com/studentinfo",{
         id:id
       })
       .then((res)=>{
@@ -49,7 +49,7 @@ export default function Studentsubmission() {
         formdata.append('file',filesub);
         formdata.append('year',info.currentsemester);
         formdata.append('id',tid);
-        axios.post("https://class-vercel-backend.vercel.app/studentassignment",formdata)
+        axios.post("https://renderbackendbbb.onrender.com/studentassignment",formdata)
         .then((res)=>{
             if(res.data.ok){
                 toast.success('Successfully Submitted',{
