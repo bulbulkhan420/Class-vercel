@@ -7,27 +7,30 @@ export default function Studentnotification() {
     let [message,smessage]=useState([{}]);
     let [up,sup]=useState([]);
     let [val,sval]=useState(0);
+    setInterval(()=>{
+      sval(val=>val+1);
+    },1500);
     
    useEffect(()=>{
     
-   axios.post("https://renderbackendbbb.onrender.com/studentinfo",{
+   axios.post(`https://renderbackendbbb.onrender.com/studentinfo`,{
     id
    })
    .then((res)=>{
     let data=res.data.currentsemester;
    
-    axios.post("https://renderbackendbbb.onrender.com/allmessage",{
+    axios.post(`https://renderbackendbbb.onrender.com/allmessage`,{
       year:data
     })
     .then((res)=>{
        smessage(res.data);
-       console.log(res.data);
-       sup(res.data)
+      
+       sup(res.data);
        
     })
 
    })
-   });
+   },[val]);
    if(up.length>10){
     up.splice(10,up.length);
     sup([...up]);
@@ -35,7 +38,7 @@ export default function Studentnotification() {
   return (
     <div>
         <Studentheader sid={id}/>
-      <div style={{height:'40px'}}></div>
+      <div style={{height:'45px'}}></div>
       <div>{up.map((it,i)=>{ 
           return <div style={{backgroundColor:'purple',marginTop:'0px',marginLeft:'auto',marginBottom:'5px',marginRight:'auto', width:'80%',borderRadius:'10px'}} key={i}>
           <p style={{fontWeight:'bolder',textAlign:'center',lineHeight:'30px',color:'aliceblue'}}>{it.name}</p>
