@@ -11,7 +11,7 @@ export default function Adminteacher() {
      let [teacher,steacher]=useState("");
      let [idtc,sidtc]=useState("");
     useEffect(()=>{
-        axios.get("https://class-vercel-backend.vercel.app/allteacher")
+        axios.get("https://renderbackendbbb.onrender.com/allteacher")
         .then((res)=>{
             sallteacher(res.data);
            sntid(res.data[0].id);
@@ -106,7 +106,7 @@ export default function Adminteacher() {
     }
     let add=(e)=>{
         e.preventDefault();
-        axios.post("https://class-vercel-backend.vercel.app/addteacheradmin",{
+        axios.post("https://renderbackendbbb.onrender.com/addteacheradmin",{
             id,password,name,home,email,phone
         })
         .then((res)=>{
@@ -128,7 +128,7 @@ export default function Adminteacher() {
         let formdata=new FormData();
         formdata.append('image1',image);
         formdata.append('picid',picid);
-        axios.post("https://class-vercel-backend.vercel.app/teacherpic",formdata)
+        axios.post("https://renderbackendbbb.onrender.com/teacherpic",formdata)
         .then((res)=>{
             if(res.data.ok){
                 toast('Picture Uploaded Successfully',{
@@ -144,7 +144,7 @@ export default function Adminteacher() {
     }
     let upt=(e)=>{
         e.preventDefault();
-        axios.post("https://class-vercel-backend.vercel.app/updateteacher",{
+        axios.post("https://renderbackendbbb.onrender.com/updateteacher",{
             id:ntid,
             password:npassword,
             email:nemail,
@@ -166,7 +166,7 @@ export default function Adminteacher() {
    
     let delte=(e)=>{
         e.preventDefault();
-        axios.post("https://class-vercel-backend.vercel.app/teacherdel/"+teacher)
+        axios.post("https://renderbackendbbb.onrender.com/teacherdel/"+teacher)
         .then((res)=>{
             if(res.data.ok){
                 toast('Teacher Information Deleted Successfully',{
@@ -184,7 +184,7 @@ export default function Adminteacher() {
     let tclass=(e)=>{
         e.preventDefault();
         
-        axios.post('https://class-vercel-backend.vercel.app/teacherclassadd',{
+        axios.post('https://renderbackendbbb.onrender.com/teacherclassadd',{
             id:idtc,
             day,
             am9,
