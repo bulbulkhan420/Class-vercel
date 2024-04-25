@@ -26,7 +26,7 @@ export default function Loginpage() {
    let submit=(e)=>{
     e.preventDefault();
     if(id=="student"){
-        axios.post("https://class-vercel-backend.vercel.app/studentlogin",{
+        axios.post("https://renderbackendbbb.onrender.com/studentlogin",{
             id:mid,
             password:pass
         })
@@ -43,7 +43,7 @@ export default function Loginpage() {
         })
     }
     else if(id=="teacher"){
-        axios.post("https://class-vercel-backend.vercel.app/teacherlogin",{
+        axios.post("https://renderbackendbbb.onrender.com/teacherlogin",{
             id:mid,
             password:pass
         })
@@ -61,7 +61,7 @@ export default function Loginpage() {
     }
     else if(id=="admin")
     {
-        axios.post("https://class-vercel-backend.vercel.app/adminlogin",{
+        axios.post("https://renderbackendbbb.onrender.com/adminlogin",{
             id:mid,
             password:pass
         })
