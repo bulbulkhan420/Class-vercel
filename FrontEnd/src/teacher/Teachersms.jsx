@@ -5,8 +5,6 @@ import axios from 'axios'
 import teci from './teacher.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import io from 'socket.io-client'
-let socket=io.connect("https://renderbackendbbb.onrender.com");
 export default function Teachersms() {
     let {id}=useParams();
     let [tin,stin]=useState({});
@@ -20,26 +18,26 @@ export default function Teachersms() {
         year:year,
         msg:msg
       }
-      await socket.emit('send',data);
-      await socket.on('check',(p)=>{
-        if(p && check==false){
+      axios.post(`https://renderbackendbbb.onrender.com/sendmessage`,{
+        info:data
+      })
+      .then((res)=>{
+        if(res.data.ok){
           toast.success('Message Sent',{
             position:'top-center'
          })
-          check=true;
         }
-        else if(p==false && check==false){
+        else{
           toast.success('Something Error',{
             position:'top-center'
          })
-         check=true;
         }
-       
       })
+     
       
     }
     useEffect(()=>{
-      axios.post("https://renderbackendbbb.onrender.com/teacherinfo",{
+      axios.post(`https://renderbackendbbb.onrender.com/teacherinfo`,{
         id
       })
       .then((res)=>{
