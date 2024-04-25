@@ -38,7 +38,7 @@ export default function Adminstudent() {
     }
     let add=(e)=>{
         e.preventDefault();
-        axios.post("https://class-vercel-backend.vercel.app/newstudentadd",{
+        axios.post("https://renderbackendbbb.onrender.com/newstudentadd",{
             id,password,name,home,hall,email,phone
         })
         .then((res)=>{
@@ -96,7 +96,7 @@ export default function Adminstudent() {
     }
     let deletes=(e)=>{
         e.preventDefault();
-        axios.post("https://class-vercel-backend.vercel.app/studentdelete",{
+        axios.post("https://renderbackendbbb.onrender.com/studentdelete",{
             id:delid
         })
         .then((res)=>{
@@ -115,7 +115,7 @@ export default function Adminstudent() {
     let update=(e)=>{
         e.preventDefault();
        
-        axios.post("https://class-vercel-backend.vercel.app/studentupdateadmin",{
+        axios.post("https://renderbackendbbb.onrender.com/studentupdateadmin",{
             id:oid,
             password:npassword,
             email:nemail,
@@ -153,7 +153,7 @@ export default function Adminstudent() {
         let formdata=new FormData();
         formdata.append('image',image);
         formdata.append('picid',picid);
-        axios.post('https://class-vercel-backend.vercel.app/uploadstudentpic',formdata)
+        axios.post('https://renderbackendbbb.onrender.com/uploadstudentpic',formdata)
         .then((res)=>{
             if(res.data.ok){
                 toast('Picture Uploaded Successfully', {
