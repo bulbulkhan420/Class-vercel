@@ -14,7 +14,7 @@ export default function Teachersubmission() {
         e.preventDefault();
         let p=e.target.value;
          syear(e.target.value);
-            axios.post("https://class-vercel-backend.vercel.app/allsub",{
+            axios.post("https://renderbackendbbb.onrender.com/allsub",{
                 year:p,
                 id
             })
@@ -26,7 +26,7 @@ export default function Teachersubmission() {
        
     }
     let download=(ob)=>{
-        axios.post("https://class-vercel-backend.vercel.app/downloads",{
+        axios.post("https://renderbackendbbb.onrender.com/downloads",{
             id:ob.filename
         },{
             responseType:'blob'
@@ -36,7 +36,7 @@ export default function Teachersubmission() {
         })
     }
     let del=(ob,i)=>{
-       axios.post("https://class-vercel-backend.vercel.app/delsub",{
+       axios.post("https://renderbackendbbb.onrender.com/delsub",{
         fname:ob.filename
        })
        .then((res)=>{
