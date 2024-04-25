@@ -9,7 +9,7 @@ export default function Studentnotification() {
     let [val,sval]=useState(0);
     setInterval(()=>{
       sval(val=>val+1);
-    },1500);
+    },9000);
     
    useEffect(()=>{
     
