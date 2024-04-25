@@ -9,13 +9,13 @@ export default function Studentroutine() {
     let [nfo,snfo]=useState({});
     let [info,sinfo]=useState([]);
     useEffect(()=>{
-        axios.post("https://class-vercel-backend.vercel.app/studentinfo",{
+        axios.post("https://renderbackendbbb.onrender.com/studentinfo",{
         id:id
       })
       .then((res)=>{
           snfo(res.data);
           console.log(res.data);
-          axios.post("https://class-vercel-backend.vercel.app/studentclassinforoutine",{
+          axios.post("https://renderbackendbbb.onrender.com/studentclassinforoutine",{
             year:res.data.currentsemester
         })
         .then((res)=>{
