@@ -2,16 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Studentheader from './Studentheader'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import io from 'socket.io-client'
-let socket=io.connect("https://renderbackendbbb.onrender.com");
 export default function Studentnotification() {
     let {id}=useParams();
     let [message,smessage]=useState([{}]);
     let [up,sup]=useState([]);
     let [val,sval]=useState(0);
-    socket.on("update",(data)=>{
-      sval(pre=>pre+1);
-     })
+    
    useEffect(()=>{
     
    axios.post("https://renderbackendbbb.onrender.com/studentinfo",{
@@ -31,7 +27,7 @@ export default function Studentnotification() {
     })
 
    })
-   },[]);
+   });
    if(up.length>10){
     up.splice(10,up.length);
     sup([...up]);
