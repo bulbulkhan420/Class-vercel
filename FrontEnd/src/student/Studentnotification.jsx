@@ -3,7 +3,7 @@ import Studentheader from './Studentheader'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import io from 'socket.io-client'
-let socket=io.connect("https://class-vercel-backend.vercel.app");
+let socket=io.connect("https://renderbackendbbb.onrender.com");
 export default function Studentnotification() {
     let {id}=useParams();
     let [message,smessage]=useState([{}]);
@@ -14,13 +14,13 @@ export default function Studentnotification() {
      })
    useEffect(()=>{
     
-   axios.post("https://class-vercel-backend.vercel.app/studentinfo",{
+   axios.post("https://renderbackendbbb.onrender.com/studentinfo",{
     id
    })
    .then((res)=>{
     let data=res.data.currentsemester;
    
-    axios.post("https://class-vercel-backend.vercel.app/allmessage",{
+    axios.post("https://renderbackendbbb.onrender.com/allmessage",{
       year:data
     })
     .then((res)=>{
