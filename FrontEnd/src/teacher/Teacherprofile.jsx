@@ -22,7 +22,7 @@ export default function Teacherprofile() {
       <h3>Your Porfile Information</h3>
         <div className={tec.prot}>
             
-            <img src={"https://renderbackendbbb.onrender.com/"+info.image} alt="" />
+            <img src={info.image} alt="" />
             <p>Your Picture</p>
             <div className={tec.dflex}>
                 <div className={tec.bold}>Name: </div>
