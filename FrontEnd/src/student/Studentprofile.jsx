@@ -19,7 +19,7 @@ export default function Studentprofile() {
     <div>
     <Studentheader sid={id}/>
     <div className={bb.profile}>
-        <img src={{info.image}} alt="" />
+        <img src={info.image} alt="" />
         <h5>Student Information</h5>
         <table>
             <tbody>
